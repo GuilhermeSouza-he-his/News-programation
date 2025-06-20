@@ -1,0 +1,62 @@
+<%- include('partials/header.html')%>
+
+    <section class="noticia-destaque">
+        <div class="center">
+            <div class="img-destaque">
+                <div class="overlay-destaque"></div>
+                <div class="descricao-img">
+                    <a href="<%= ports[0].slug%>">
+                        <h2>
+                            <%= ports[0].titulo%>
+                        </h2>
+                    </a>
+                    <p><%- ports[0].descricaoCurta%></p>
+                </div>
+                <img src="<%= ports[0].imagem%>">
+            </div>
+        </div>
+    </section>
+
+    <section class="ultimas-publicacoes">
+        <div class="title-outras-noticias">
+            <h2>Ultimas Noticias</h2>
+            <div class="center">
+                <div class="ultimas">
+                    <% for(let i=1; i < ports.length; i++) { %>
+                        <div class="item">
+                            <img src="<%= ports[i].imagem %>">
+                            <h3 style="color: <%= categoryColors[ports[i].categoria] || '#000' %>;">
+                                <%= ports[i].categoria %>
+                            </h3>
+                            <h2>
+                                <%= ports[i].titulo %>
+                            </h2>
+                            <p><%- ports[i].descricaoCurta %></p>
+                            <a href="/<%= ports[i].slug %>">Saiba Mais</a>
+                        </div>
+                        <% } %>
+                </div>
+                <div class="mais-lidas">
+                    <h3>Mais Lidas</h3>
+                    <div class="mais-lidas-noticias">
+                        <% for(let i=0; i < portsTop.length; i++) { %>
+                            <div class="mais-lidas-noticias-single">
+                                <img src="<%= portsTop[i].imagem%>">
+                                <div class="texto-mais-lidas-single">
+                                    <h4 style="color: <%= categoryColors[ports[i].categoria] || '#000' %>;">
+                                        <%= ports[i].categoria %>
+                                    </h4>
+                                    <p><%- portsTop[i].descricaoCurta%>.... - <span
+                                                style="font-size: 12px;font-weight: bold;">(<%= portsTop[i].views%>
+                                                    views)</span></p>
+                                    <a href="<%= portsTop[i].slug%>">Saiba Mais</a>
+                                </div>
+                            </div>
+                            <% } %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <%- include('partials/footer.html')%>

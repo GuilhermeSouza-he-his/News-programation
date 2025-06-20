@@ -1,0 +1,32 @@
+<%- include('partials/header.html')%>
+
+
+
+    <section class="ultimas-publicacoes">
+        <div class="title-outras-noticias">
+            <h2>Busca:</h2>
+            <div class="center">
+                <div style="width: 100%;" class="mais-lidas">
+                    <h3>
+                        <%= contagem%> Resutados
+                    </h3>
+                    <div class="mais-lidas-noticias">
+                        <% for(let i=0; i < ports.length; i++) { %>
+                            <div class="mais-lidas-noticias-single">
+                                <img src="<%= ports[i].imagem%>">
+                                <div class="texto-mais-lidas-single">
+                                    <h4 style="color: <%= categoryColors[ports[i].categoria] || '#000' %>;">
+                                        <%= ports[i].categoria %>
+                                    </h4>
+                                    <p><%- ports[i].descricaoCurta%></p>
+                                    <a href="<%= ports[i].slug%>">Saiba Mais</a>
+                                </div>
+                            </div>
+                            <% } %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <%- include('partials/footer.html')%>
