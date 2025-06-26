@@ -307,8 +307,12 @@ section.noticia {
     padding: 20px;
     border-radius: 10px;
     background-color: #fff;
+    text-align: center;
     width: 58%;
     margin-right: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .noticia-single h2 {

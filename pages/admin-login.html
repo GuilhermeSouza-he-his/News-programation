@@ -4,12 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Faça login</title>
+    <style>
+        body{
+            background-color: #ebebeb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .login-card{
+        background-color: #fff;
+        padding: 70px 30px 44px;
+        margin: 0 20px;
+        border-radius: 1.25rem;
+        text-align: center;
+        }
+        .login-card h2{
+            font-size: 36px;
+            font-weight: 600;
+        }
+        .login-card h3{
+            font-size: 1rem;
+            font-weight: 500;
+            color: rgba(0,0,0,0.30);
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        form input[type=text]{
+            width: 300px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            height: 35px;
+            outline: none;
+            padding: 0 0 0 10px;
+        }
+
+        form input[type=submit]{
+            width: 312px;
+            height: 35px;
+            border: transparent;
+            font-size: 20px;
+            color: #fff;
+            border-radius: 10px;
+            background-color: #000;
+            transition: all 0.3s ease;
+        }
+        form input[type=submit]:hover{
+            background-color: #fff;
+            border: 1px solid #000;
+            color: #000;
+        }
+    </style>
 </head>
 <body>
-    <form method="post">
-        <input type="text" name="login">
-        <input type="text" name="senha">
-        <input type="submit" name="acao" value="logar">
-    </form>
+
+    <div class="login-card">
+        <h2>Login</h2>
+        <h3>Enter your credentials</h3>
+
+        <form method="post">
+            <input type="text" name="login">
+            <input type="text" name="senha">
+            <input type="submit" name="acao" value="Log In">
+        </form>
+    </div>
+    
 </body>
 </html>
